@@ -40,7 +40,7 @@
                 <tr>
                     <td> {{ user.email }}<td>
                     <td> {{ user.username }}<td>
-                    <td><a class="btn btn-secondary" href="{{ path('app_user_edit',{'id':user.id} )}}">Edit</a></td>
+                    <td><a class="btn btn-secondary" href="{{ path('app_user_edit',{'id':user.id} )}}">Guardar</a></td>
                     <td><a class="btn btn-danger" href="{{ path('app_user_delete',{'id':user.id} )}}" onclick="return confirm('¿Esta seguro que desea eliminar este usuario?')">X</a></td>
                 </tr>
             {% endfor %}
