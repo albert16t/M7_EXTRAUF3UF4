@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+{{ parent() }}
+
+{% endblock %}
+{% block body %}
+    <div class="container">
+        <div class="col-lg-4 box-form">
+            <h2>Login</h2>
+            <form action="{{ path('app_findemployee') }}" method="post">
+                <div class="form-group">
+                    <input type="text" id="pack" name="_employee" class="form-control" value="{{ pack}}"/>
+                </div>
+                <button type="submit" class="btn btn-success">Find employee</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}

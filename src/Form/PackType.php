@@ -1,30 +1,36 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: linux
+ * Date: 12/06/19
+ * Time: 18:30
+ */
 
-namespace App\Form\Comment;
+namespace App\Form;
 
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-class CommentType extends AbstractType
+
+class PackType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('comment', TextType::class, [
+            ->add('Pack', TextType::class, [
                 'attr' => ['autofocus' => true],
-                'label' => 'Añade un comentario',
-                'attr'=>[
-                    'class'=>'form-control'
+                'label' => 'Pack',
+                'attr' => [
+                    'class' => 'form-control'
                 ]
             ])
             ->add('publicar', SubmitType::class,
-                ['label'=>'Publicar',
-                    'attr'=>[
-                        'class'=>'form-submit btn btn-success'
-                    ]])
-        ;
+                ['label' => 'Confirmar',
+                    'attr' => [
+                        'class' => 'form-submit btn btn-success'
+                    ]]);
     }
 
     /**
@@ -32,7 +38,8 @@ class CommentType extends AbstractType
      */
     public function configureOptions(OptionsResolver $resolver)
     {
-        $resolver->setDefaults(['data_class'=>'App\Entity\Comment']);
+        $resolver->setDefaults(['data_class' => 'App\Entity\Tag']);
 
     }
+
 }
